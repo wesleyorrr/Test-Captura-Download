@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teste — Editor de Camisa (Canvas)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Editor de Camisa (Canvas)</h1>
+
+    <div class="panel">
+      <div class="group">
+        <label for="shirtColor">Cor da camisa</label>
+        <input type="color" id="shirtColor" value="#ffffff" />
+      </div>
+
+      <div class="group">
+        <label for="imgUpload">Adicionar imagem</label>
+        <input type="file" id="imgUpload" accept="image/*" />
+      </div>
+
+      <div class="group">
+        <label for="imgFilter">Filtro da imagem selecionada</label>
+        <select id="imgFilter">
+          <option value="none" selected>Nenhum</option>
+          <option value="grayscale(1)">Preto & Branco</option>
+          <option value="sepia(1)">Sépia</option>
+        </select>
+      </div>
+
+      <div class="group inline">
+        <button id="bringForward">Trazer p/ frente</button>
+        <button id="sendBackward">Enviar p/ trás</button>
+        <button id="deleteObj">Remover selecionado</button>
+      </div>
+
+      <div class="group inline">
+        <button id="clearAll">Limpar tudo</button>
+        <button id="savePNG" class="primary">Salvar PNG</button>
+      </div>
+    </div>
+
+    <div class="canvas-box">
+      <!-- Canvas interativo e também fonte da exportação -->
+      <canvas id="shirtCanvas" width="800" height="900"></canvas>
+      <p class="hint">Dica: clique na imagem para selecionar. Arraste para mover. Use a alça no canto para redimensionar. Shift+arraste para manter proporção.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
